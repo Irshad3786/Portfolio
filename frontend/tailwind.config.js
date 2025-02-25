@@ -5,7 +5,18 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        rocko: ["Rocko", "sans-serif"],
+      },
+      colors: {
+        colorone: "#E9FF09",
+        colortwo: "#404417",
+      },
+      screens: {
+        "middleone": "520px", 
+      },
+    },
   },
   plugins: [],
 }

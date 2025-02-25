@@ -1,3 +1,8 @@
+@font-face {
+    font-family: Rocko;
+    src: url("../src/assets/RockoFLF.ttf");
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
