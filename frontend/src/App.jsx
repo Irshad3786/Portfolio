@@ -34,7 +34,7 @@ function App() {
 
           </div>
 
-          <div >
+          <div className='hidden middleone:flex text-white justify-between gap-4 font-rocko items-center p-3 middletwo:text-xl'>
             <h1 >Home</h1>
             <h1>Why Me</h1>
             <h1>Projects</h1>
@@ -42,7 +42,7 @@ function App() {
           </div>
         </div>
       </div>
-        
+
     </>
   )
 }

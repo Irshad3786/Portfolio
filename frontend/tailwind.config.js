@@ -15,6 +15,7 @@ export default {
       },
       screens: {
         "middleone": "520px", 
+        "middletwo": "720px", 
       },
     },
   },
