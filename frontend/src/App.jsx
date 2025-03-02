@@ -1,10 +1,25 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { useRef } from 'react';
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
 import './App.css'
+
 
 function App() {
   const [count, setCount] = useState(0)
+
+  const menu = useRef()
+
+  useGSAP(()=>{
+    gsap.from(menu.current,{
+      duration:2,
+      delay:0.5,
+      opacity:0,
+      stagger: 0.2,
+      ease: "power2.out",
+      pointerEvents: "auto"
+    })
+  })
 
   return (
     <>
@@ -34,7 +49,7 @@ function App() {
 
           </div>
 
-          <div className='hidden middleone:flex text-white justify-between gap-4 font-rocko items-center p-3 middletwo:text-xl middletwo:gap-7'>
+          <div className='hidden middleone:flex text-white justify-between gap-4 font-rocko items-center p-3 middletwo:text-xl middletwo:gap-7' ref={menu}>
             <h1 >Home</h1>
             <h1>Why Me</h1>
             <h1>Projects</h1>
@@ -60,7 +75,7 @@ function App() {
               </div>
 
           </div>
-        </div>
+        </div> 
       </div>
 
     </>
