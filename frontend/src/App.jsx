@@ -3,6 +3,7 @@ import { useRef } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import './App.css'
+import profile from '../src/assets/profile.png'
 
 
 function App() {
@@ -76,6 +77,18 @@ function App() {
 
           </div>
         </div> 
+        <div className='flex flex-col justify-center items-center gap-16'>
+          <div>
+            <h1 className='font-Barlow text-colorone flex items-center gap-2 text-4xl'>Crafting <h1 className='font-caveat text-colorone text-2xl'>Ideas ,</h1></h1>
+            <h1 className='font-Barlow text-colorone text-4xl'>Designing</h1>
+            <h1 className='font-Barlow text-colorone text-4xl'>Futures.</h1>
+          </div>
+          <div>
+            <div className='h-64 w-64 bg-colorone'>
+                <img src={profile} className='h-72' />
+            </div>
+          </div>
+        </div>
       </div>
 
     </>

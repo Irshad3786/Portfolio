@@ -8,6 +8,8 @@ export default {
     extend: {
       fontFamily: {
         rocko: ["Rocko", "sans-serif"],
+        Barlow:["Barlow Semi Condensed", "sans-serif"],
+        caveat:["Caveat", "cursive"]
       },
       colors: {
         colorone: "#E9FF09",

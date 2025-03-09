@@ -3,6 +3,34 @@
     src: url("../src/assets/RockoFLF.ttf");
 }
 
+@font-face {
+    font-family: "Barlow Semi Condensed";
+    src: url("../src/assets/BarlowSemiCondensed-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Barlow Semi Condensed";
+    src: url("../src/assets/BarlowSemiCondensed-Bold.ttf") format("truetype");
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Caveat";
+    src: url("../src/assets/Caveat-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Caveat";
+    src: url("../src/assets/Caveat-Bold.ttf") format("truetype");
+    font-weight: bold;
+    font-style: normal;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
