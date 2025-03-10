@@ -85,7 +85,7 @@ function App() {
           </div>
           <div>
             <div className='h-64 w-64 bg-colorone'>
-                <img src={profile} className='h-72' />
+                <img src={profile} className='w-[100%] h-[100%]' />
             </div>
           </div>
         </div>
