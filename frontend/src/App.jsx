@@ -77,14 +77,14 @@ function App() {
 
           </div>
         </div> 
-        <div className='flex flex-col justify-center items-center gap-16'>
+        <div className='flex flex-col justify-center items-center gap-16 middleone:flex-row middletwo:flex-row middletwo:gap-72'>
           <div>
-            <h1 className='font-Barlow text-colorone flex items-center gap-2 text-4xl'>Crafting <h1 className='font-caveat text-colorone text-2xl'>Ideas ,</h1></h1>
-            <h1 className='font-Barlow text-colorone text-4xl'>Designing</h1>
-            <h1 className='font-Barlow text-colorone text-4xl'>Futures.</h1>
+            <h1 className='font-Barlow text-colorone flex items-center gap-2 text-4xl middleone:text-5xl middletwo:text-6xl'>Crafting <h1 className='font-caveat text-colorone text-2xl middleone:text-3xl middletwo:text-4xl'>Ideas ,</h1></h1>
+            <h1 className='font-Barlow text-colorone text-4xl middleone:text-5xl middletwo:text-6xl'>Designing</h1>
+            <h1 className='font-Barlow text-colorone text-4xl middleone:text-5xl middletwo:text-6xl'>Futures.</h1>
           </div>
           <div>
-            <div className='h-64 w-64 bg-colorone'>
+            <div className='h-64 w-64 bg-colorone middleone:h-72 middleone:w-72 middletwo:h-80 middletwo:w-80'>
                 <img src={profile} className='w-[100%] h-[100%]' />
             </div>
           </div>
