@@ -10,9 +10,21 @@ function App() {
   const [count, setCount] = useState(0)
 
   const menu = useRef()
+  const textone = useRef()
 
   useGSAP(()=>{
     gsap.from(menu.current,{
+      duration:2,
+      delay:0.5,
+      opacity:0,
+      stagger: 0.2,
+      ease: "power2.out",
+      pointerEvents: "auto"
+    })
+  })
+
+  useGSAP(()=>{
+    gsap.from(textone.current,{
       duration:2,
       delay:0.5,
       opacity:0,
@@ -77,20 +89,19 @@ function App() {
 
           </div>
         </div> 
-        <div className='flex flex-col justify-center items-center gap-16 middleone:flex-row middletwo:flex-row middletwo:gap-72'>
-          <div>
-            <h1 className='font-Barlow text-colorone flex items-center gap-2 text-4xl middleone:text-5xl middletwo:text-6xl'>Crafting <h1 className='font-caveat text-colorone text-2xl middleone:text-3xl middletwo:text-4xl'>Ideas ,</h1></h1>
-            <h1 className='font-Barlow text-colorone text-4xl middleone:text-5xl middletwo:text-6xl'>Designing</h1>
-            <h1 className='font-Barlow text-colorone text-4xl middleone:text-5xl middletwo:text-6xl'>Futures.</h1>
+        <div className='flex flex-col justify-center items-center gap-16 middleone:flex-row middletwo:flex-row  middletwo:justify-between middleone:px-20 middletwo:px-32 middlethree:px-52 middleone:pt-12'>
+          <div ref={textone}>
+            <h1 className='font-Barlow text-colorone flex items-center gap-2 text-4xl middletwo:text-5xl middlethree:text-6xl'>Crafting <h1 className='font-caveat text-colorone text-2xl  middletwo:text-3xl middlethree:text-4xl'>Ideas ,</h1></h1>
+            <h1 className='font-Barlow text-colorone text-4xl  middletwo:text-5xl middlethree:text-6xl'>Designing</h1>
+            <h1 className='font-Barlow text-colorone text-4xl l middletwo:text-5xl middlethree:text-6xl'>Futures.</h1>
           </div>
           <div>
-            <div className='h-64 w-64 bg-colorone middleone:h-72 middleone:w-72 middletwo:h-80 middletwo:w-80'>
-                <img src={profile} className='w-[100%] h-[100%]' />
+            <div className='h-64 w-64 bg-colorone middleone:h-72 middleone:w-72 middletwo:h-80 middletwo:w-80 middlethree:h-96 middlethree:w-96 flex items-end'>
+                <img src={profile} className='w-[100%]  ' />
             </div>
           </div>
         </div>
       </div>
-
     </>
   )
 }
