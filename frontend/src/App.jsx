@@ -4,6 +4,17 @@ import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import './App.css'
 import profile from '../src/assets/profile.png'
+import svgone from '../src/assets/shapes/01.svg'
+import svgtwo from '../src/assets/shapes/02.svg'
+import svgthree from '../src/assets/shapes/03.svg'
+import svgfour from '../src/assets/shapes/04.svg'
+import svgfive from '../src/assets/shapes/05.svg'
+import svgsix from '../src/assets/shapes/06.svg'
+import svgseven from '../src/assets/shapes/07.svg'
+import svgeight from '../src/assets/shapes/08.svg'
+import svgnine from '../src/assets/shapes/09.svg'
+import svgten from '../src/assets/shapes/10.svg'
+import svgeleven from '../src/assets/shapes/11.svg'
 
 
 function App() {
@@ -33,6 +44,11 @@ function App() {
       pointerEvents: "auto"
     })
   })
+
+  const EnterImage = (x)=>[
+    console.log(x)
+    
+  ]
 
   return (
     <>
@@ -96,8 +112,76 @@ function App() {
             <h1 className='font-Barlow text-colorone text-4xl l middletwo:text-5xl middlethree:text-6xl'>Futures.</h1>
           </div>
           <div>
-            <div className='h-64 w-64 bg-colorone middleone:h-72 middleone:w-72 middletwo:h-80 middletwo:w-80 middlethree:h-96 middlethree:w-96 flex items-end'>
-                <img src={profile} className='w-[100%]  ' />
+            <div className='h-64 w-64 bg-colorone middleone:h-72 middleone:w-72 middletwo:h-80 middletwo:w-80 middlethree:h-96 middlethree:w-96 flex items-end relative overflow-hidden'  onMouseMove={EnterImage}>
+                <div className='flex  flex-col gap-3'>
+                <div className='w-16 flex gap-5'>
+                    <img src={svgone} alt="" srcset="" />
+                    <img src={svgtwo} alt="" srcset="" />
+                    <img src={svgthree} alt="" srcset="" />
+                    <img src={svgfour} alt="" srcset="" />
+                    <img src={svgfive} alt="" srcset="" />
+                    <img src={svgsix} alt="" srcset="" />
+                    <img src={svgseven} alt="" srcset="" />
+                    <img src={svgeight} alt="" srcset="" />
+                    <img src={svgnine} alt="" srcset="" />
+                    <img src={svgten} alt="" srcset="" />
+                    <img src={svgeleven} alt="" srcset="" />
+                  </div>
+                  <div className='w-16 flex gap-5'>
+                    <img src={svgone} alt="" srcset="" />
+                    <img src={svgtwo} alt="" srcset="" />
+                    <img src={svgthree} alt="" srcset="" />
+                    <img src={svgfour} alt="" srcset="" />
+                    <img src={svgfive} alt="" srcset="" />
+                    <img src={svgsix} alt="" srcset="" />
+                    <img src={svgseven} alt="" srcset="" />
+                    <img src={svgeight} alt="" srcset="" />
+                    <img src={svgnine} alt="" srcset="" />
+                    <img src={svgten} alt="" srcset="" />
+                    <img src={svgeleven} alt="" srcset="" />
+                  </div>
+                  <div className='w-16 flex gap-5'>
+                    <img src={svgone} alt="" srcset="" />
+                    <img src={svgtwo} alt="" srcset="" />
+                    <img src={svgthree} alt="" srcset="" />
+                    <img src={svgfour} alt="" srcset="" />
+                    <img src={svgfive} alt="" srcset="" />
+                    <img src={svgsix} alt="" srcset="" />
+                    <img src={svgseven} alt="" srcset="" />
+                    <img src={svgeight} alt="" srcset="" />
+                    <img src={svgnine} alt="" srcset="" />
+                    <img src={svgten} alt="" srcset="" />
+                    <img src={svgeleven} alt="" srcset="" />
+                  </div>
+                  <div className='w-16 flex gap-5'>
+                    <img src={svgone} alt="" srcset="" />
+                    <img src={svgtwo} alt="" srcset="" />
+                    <img src={svgthree} alt="" srcset="" />
+                    <img src={svgfour} alt="" srcset="" />
+                    <img src={svgfive} alt="" srcset="" />
+                    <img src={svgsix} alt="" srcset="" />
+                    <img src={svgseven} alt="" srcset="" />
+                    <img src={svgeight} alt="" srcset="" />
+                    <img src={svgnine} alt="" srcset="" />
+                    <img src={svgten} alt="" srcset="" />
+                    <img src={svgeleven} alt="" srcset="" />
+                  </div>
+                  <div className='w-16 flex gap-5'>
+                    <img src={svgone} alt="" srcset="" />
+                    <img src={svgtwo} alt="" srcset="" />
+                    <img src={svgthree} alt="" srcset="" />
+                    <img src={svgfour} alt="" srcset="" />
+                    <img src={svgfive} alt="" srcset="" />
+                    <img src={svgsix} alt="" srcset="" />
+                    <img src={svgseven} alt="" srcset="" />
+                    <img src={svgeight} alt="" srcset="" />
+                    <img src={svgnine} alt="" srcset="" />
+                    <img src={svgten} alt="" srcset="" />
+                    <img src={svgeleven} alt="" srcset="" />
+                  </div>
+               
+                </div>
+                <img src={profile} className='w-[100%]  absolute' />
             </div>
           </div>
         </div>
