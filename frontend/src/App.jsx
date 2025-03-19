@@ -1,8 +1,9 @@
-import { useState } from 'react'
+import { useReducer, useState } from 'react'
 import { useRef } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import './App.css'
+import { useEffect } from 'react';
 import profile from '../src/assets/profile.png'
 import svgone from '../src/assets/shapes/01.svg'
 import svgtwo from '../src/assets/shapes/02.svg'
@@ -20,8 +21,26 @@ import svgeleven from '../src/assets/shapes/11.svg'
 function App() {
   const [count, setCount] = useState(0)
 
+  const [shuffledSvgs, setShuffledSvgs] = useState([]);
+
+  
+
+  const svgs = [
+    svgone, svgtwo, svgthree, svgfour, svgfive, svgsix,
+    svgseven, svgeight, svgnine, svgten, svgeleven,
+  ];
+
+  const shuffleArray = (array) => {
+    return array.sort(() => Math.random() - 0.5);
+  };
+
+  useEffect(() => {
+    setShuffledSvgs(shuffleArray([...svgs]));
+  }, []);
+
   const menu = useRef()
   const textone = useRef()
+  const rowsRef = useRef([]);
 
   useGSAP(()=>{
     gsap.from(menu.current,{
@@ -43,6 +62,17 @@ function App() {
       ease: "power2.out",
       pointerEvents: "auto"
     })
+  })
+
+  useGSAP(()=>{
+    rowsRef.current.forEach((row, index) => {
+      gsap.to(row, {
+        x: "-=100%", 
+        duration: 5 + index, 
+        repeat: -1, 
+        ease: "power2.out",
+      });
+    });
   })
 
   const EnterImage = (x)=>[
@@ -113,72 +143,14 @@ function App() {
           </div>
           <div>
             <div className='h-64 w-64 bg-colorone middleone:h-72 middleone:w-72 middletwo:h-80 middletwo:w-80 middlethree:h-96 middlethree:w-96 flex items-end relative overflow-hidden'  onMouseMove={EnterImage}>
-                <div className='flex  flex-col gap-3'>
-                <div className='w-16 flex gap-5'>
-                    <img src={svgone} alt="" srcset="" />
-                    <img src={svgtwo} alt="" srcset="" />
-                    <img src={svgthree} alt="" srcset="" />
-                    <img src={svgfour} alt="" srcset="" />
-                    <img src={svgfive} alt="" srcset="" />
-                    <img src={svgsix} alt="" srcset="" />
-                    <img src={svgseven} alt="" srcset="" />
-                    <img src={svgeight} alt="" srcset="" />
-                    <img src={svgnine} alt="" srcset="" />
-                    <img src={svgten} alt="" srcset="" />
-                    <img src={svgeleven} alt="" srcset="" />
-                  </div>
-                  <div className='w-16 flex gap-5'>
-                    <img src={svgone} alt="" srcset="" />
-                    <img src={svgtwo} alt="" srcset="" />
-                    <img src={svgthree} alt="" srcset="" />
-                    <img src={svgfour} alt="" srcset="" />
-                    <img src={svgfive} alt="" srcset="" />
-                    <img src={svgsix} alt="" srcset="" />
-                    <img src={svgseven} alt="" srcset="" />
-                    <img src={svgeight} alt="" srcset="" />
-                    <img src={svgnine} alt="" srcset="" />
-                    <img src={svgten} alt="" srcset="" />
-                    <img src={svgeleven} alt="" srcset="" />
-                  </div>
-                  <div className='w-16 flex gap-5'>
-                    <img src={svgone} alt="" srcset="" />
-                    <img src={svgtwo} alt="" srcset="" />
-                    <img src={svgthree} alt="" srcset="" />
-                    <img src={svgfour} alt="" srcset="" />
-                    <img src={svgfive} alt="" srcset="" />
-                    <img src={svgsix} alt="" srcset="" />
-                    <img src={svgseven} alt="" srcset="" />
-                    <img src={svgeight} alt="" srcset="" />
-                    <img src={svgnine} alt="" srcset="" />
-                    <img src={svgten} alt="" srcset="" />
-                    <img src={svgeleven} alt="" srcset="" />
-                  </div>
-                  <div className='w-16 flex gap-5'>
-                    <img src={svgone} alt="" srcset="" />
-                    <img src={svgtwo} alt="" srcset="" />
-                    <img src={svgthree} alt="" srcset="" />
-                    <img src={svgfour} alt="" srcset="" />
-                    <img src={svgfive} alt="" srcset="" />
-                    <img src={svgsix} alt="" srcset="" />
-                    <img src={svgseven} alt="" srcset="" />
-                    <img src={svgeight} alt="" srcset="" />
-                    <img src={svgnine} alt="" srcset="" />
-                    <img src={svgten} alt="" srcset="" />
-                    <img src={svgeleven} alt="" srcset="" />
-                  </div>
-                  <div className='w-16 flex gap-5'>
-                    <img src={svgone} alt="" srcset="" />
-                    <img src={svgtwo} alt="" srcset="" />
-                    <img src={svgthree} alt="" srcset="" />
-                    <img src={svgfour} alt="" srcset="" />
-                    <img src={svgfive} alt="" srcset="" />
-                    <img src={svgsix} alt="" srcset="" />
-                    <img src={svgseven} alt="" srcset="" />
-                    <img src={svgeight} alt="" srcset="" />
-                    <img src={svgnine} alt="" srcset="" />
-                    <img src={svgten} alt="" srcset="" />
-                    <img src={svgeleven} alt="" srcset="" />
-                  </div>
+                <div className='flex flex-col gap-3'>
+                {Array.from({ length: 15 }).map((_, index) => (
+                    <div key={index} className="w-16  flex gap-2"  ref={(el) => (rowsRef.current[index] = el)}>
+                      {shuffleArray([...shuffledSvgs]).map((svg, i) => (
+                        <img key={i} src={svg} alt="" className="w-24"  />
+                      ))}
+                    </div>
+                  ))}
                
                 </div>
                 <img src={profile} className='w-[100%]  absolute' />
