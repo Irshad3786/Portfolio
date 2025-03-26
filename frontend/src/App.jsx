@@ -22,25 +22,70 @@ function App() {
   const [count, setCount] = useState(0)
 
   const [shuffledSvgs, setShuffledSvgs] = useState([]);
+  const [shuffledSvgs01, setShuffledSvgs01] = useState([]);
+  const [shuffledSvgs02, setShuffledSvgs02] = useState([]);
+  const [shuffledSvgs03, setShuffledSvgs03] = useState([]);
+  const [shuffledSvgs04, setShuffledSvgs04] = useState([]);
 
   
 
   const svgs = [
     svgone, svgtwo, svgthree, svgfour, svgfive, svgsix,
-    svgseven, svgeight, svgnine, svgten, svgeleven,
+    svgseven, svgeight, svgnine, svgten, svgeleven,svgone, svgtwo, svgthree, svgfour, svgfive, svgsix,
+    svgseven, svgeight, svgnine, svgten, svgeleven,svgone, svgtwo, svgthree, svgfour, svgfive, svgsix,
+    svgseven, svgeight, svgnine,
   ];
 
   const shuffleArray = (array) => {
     return array.sort(() => Math.random() - 0.5);
   };
 
+  const shuffleArray01 = (array) => {
+    return array.sort(() => Math.random() - 0.5);
+  };
+
+  const shuffleArray02 = (array) => {
+    return array.sort(() => Math.random() - 0.5);
+  };
+
+  const shuffleArray03 = (array) => {
+    return array.sort(() => Math.random() - 0.5);
+  };
+
+  const shuffleArray04 = (array) => {
+    return array.sort(() => Math.random() - 0.5);
+  };
+
+  
+
+
   useEffect(() => {
     setShuffledSvgs(shuffleArray([...svgs]));
+    setShuffledSvgs01(shuffleArray([...svgs]));
+    setShuffledSvgs02(shuffleArray([...svgs]));
+    setShuffledSvgs03(shuffleArray([...svgs]));
+    setShuffledSvgs04(shuffleArray([...svgs]));
+
+    gsap.to(scrollRef.current, {
+      x: "-100%",
+      duration: 20, 
+      ease: "linear",
+      repeat: -1, 
+    });
+
+    
+
   }, []);
+
+ 
+
+  
 
   const menu = useRef()
   const textone = useRef()
-  const rowsRef = useRef([]);
+  const scrollRef = useRef();
+  const scrollReftwo = useRef();
+  const scrollRefthree = useRef();
 
   useGSAP(()=>{
     gsap.from(menu.current,{
@@ -55,7 +100,7 @@ function App() {
 
   useGSAP(()=>{
     gsap.from(textone.current,{
-      duration:2,
+      duration:0.5,
       delay:0.5,
       opacity:0,
       stagger: 0.2,
@@ -64,16 +109,9 @@ function App() {
     })
   })
 
-  useGSAP(()=>{
-    rowsRef.current.forEach((row, index) => {
-      gsap.to(row, {
-        x: "-=100%", 
-        duration: 5 + index, 
-        repeat: -1, 
-        ease: "power2.out",
-      });
-    });
-  })
+
+
+  
 
   const EnterImage = (x)=>[
     console.log(x)
@@ -143,14 +181,36 @@ function App() {
           </div>
           <div>
             <div className='h-64 w-64 bg-colorone middleone:h-72 middleone:w-72 middletwo:h-80 middletwo:w-80 middlethree:h-96 middlethree:w-96 flex items-end relative overflow-hidden'  onMouseMove={EnterImage}>
-                <div className='flex flex-col gap-3'>
-                {Array.from({ length: 15 }).map((_, index) => (
-                    <div key={index} className="w-16  flex gap-2"  ref={(el) => (rowsRef.current[index] = el)}>
-                      {shuffleArray([...shuffledSvgs]).map((svg, i) => (
-                        <img key={i} src={svg} alt="" className="w-24"  />
-                      ))}
-                    </div>
+                <div className='flex flex-col gap-3' ref={scrollRef}>
+                  <div className='flex gap-2' >
+                  {shuffledSvgs.map((value,index)=>(
+                    <img src={value} alt="" srcset="" key={index} className='h-16' />
                   ))}
+                  </div>
+ 
+                  <div className='flex gap-2' >
+                  {shuffledSvgs01.map((value,index)=>(
+                    <img src={value} alt="" srcset="" key={index} className='h-16' />
+                  ))}
+                  </div>
+
+                  <div className='flex gap-2' >
+                  {shuffledSvgs02.map((value,index)=>(
+                    <img src={value} alt="" srcset="" key={index} className='h-16' />
+                  ))}
+                  </div>
+
+                  <div className='flex gap-2' >
+                  {shuffledSvgs03.map((value,index)=>(
+                    <img src={value} alt="" srcset="" key={index} className='h-16' />
+                  ))}
+                  </div>
+
+                  <div className='flex gap-2' >
+                  {shuffledSvgs04.map((value,index)=>(
+                    <img src={value} alt="" srcset="" key={index} className='h-16' />
+                  ))}
+                  </div>
                
                 </div>
                 <img src={profile} className='w-[100%]  absolute' />
