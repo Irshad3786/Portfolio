@@ -26,7 +26,7 @@ function App() {
   const [shuffledSvgs02, setShuffledSvgs02] = useState([]);
   const [shuffledSvgs03, setShuffledSvgs03] = useState([]);
   const [shuffledSvgs04, setShuffledSvgs04] = useState([]);
-
+  const [direction , setDirection] = useState("left")
   
 
   const svgs = [
@@ -36,25 +36,12 @@ function App() {
     svgseven, svgeight, svgnine,
   ];
 
+
   const shuffleArray = (array) => {
     return array.sort(() => Math.random() - 0.5);
   };
 
-  const shuffleArray01 = (array) => {
-    return array.sort(() => Math.random() - 0.5);
-  };
-
-  const shuffleArray02 = (array) => {
-    return array.sort(() => Math.random() - 0.5);
-  };
-
-  const shuffleArray03 = (array) => {
-    return array.sort(() => Math.random() - 0.5);
-  };
-
-  const shuffleArray04 = (array) => {
-    return array.sort(() => Math.random() - 0.5);
-  };
+  
 
   
 
@@ -66,16 +53,29 @@ function App() {
     setShuffledSvgs03(shuffleArray([...svgs]));
     setShuffledSvgs04(shuffleArray([...svgs]));
 
+
+    
+
+  }, []);
+
+  useEffect(() => {
+
+    gsap.killTweensOf(scrollRef.current);
+
+    
     gsap.to(scrollRef.current, {
-      x: "-400%",
+      x: direction === 'left' ? '-400%' : '400%',
       duration: 35, 
       ease: "linear",
       repeat: -1, 
     });
 
+   
     
-
-  }, []);
+   
+    
+  }, [direction])
+  
 
  
 
@@ -84,8 +84,10 @@ function App() {
   const menu = useRef()
   const textone = useRef()
   const scrollRef = useRef();
-  const scrollReftwo = useRef();
-  const scrollRefthree = useRef();
+  const imagebox = useRef(null);
+
+
+  
 
   useGSAP(()=>{
     gsap.from(menu.current,{
@@ -113,10 +115,25 @@ function App() {
 
   
 
-  const EnterImage = (x)=>[
-    console.log(x)
+  const EnterImage = (x)=>{
+
+    const div = imagebox.current.getBoundingClientRect();
+    const middle = div.left + div.width / 2
+    const mouseplace = x.clientX
+    if(mouseplace < middle){
+      
+      setDirection("left")
+      
+    }else{
+      
+      setDirection("right")
+    }
+
+   
+  }
+
     
-  ]
+ 
 
   return (
     <>
@@ -180,7 +197,7 @@ function App() {
             <h1 className='font-Barlow text-colorone text-4xl l middletwo:text-5xl middlethree:text-6xl'>Futures.</h1>
           </div>
           <div>
-            <div className='h-64 w-64 bg-colorone middleone:h-72 middleone:w-72 middletwo:h-80 middletwo:w-80 middlethree:h-96 middlethree:w-96 flex items-end relative overflow-hidden'  onMouseMove={EnterImage}>
+            <div className='h-64 w-64 bg-colorone middleone:h-72 middleone:w-72 middletwo:h-80 middletwo:w-80 middlethree:h-96 middlethree:w-96 flex items-end relative overflow-hidden'  onMouseMove={EnterImage} ref={imagebox}>
                 <div className='flex flex-col gap-3' ref={scrollRef}>
                   <div className='flex gap-2' >
                   {shuffledSvgs.map((value,index)=>(
