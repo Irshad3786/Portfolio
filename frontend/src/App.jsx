@@ -16,23 +16,25 @@ import svgeight from '../src/assets/shapes/08.svg'
 import svgnine from '../src/assets/shapes/09.svg'
 import svgten from '../src/assets/shapes/10.svg'
 import svgeleven from '../src/assets/shapes/11.svg'
-
+import { useLayoutEffect } from 'react';
 
 function App() {
-  const [count, setCount] = useState(0)
+ 
 
   const [shuffledSvgs, setShuffledSvgs] = useState([]);
   const [shuffledSvgs01, setShuffledSvgs01] = useState([]);
   const [shuffledSvgs02, setShuffledSvgs02] = useState([]);
   const [shuffledSvgs03, setShuffledSvgs03] = useState([]);
   const [shuffledSvgs04, setShuffledSvgs04] = useState([]);
-  const [direction , setDirection] = useState("left")
+  const [direction , setDirection] = useState("right")
   
 
   const svgs = [
     svgone, svgtwo, svgthree, svgfour, svgfive, svgsix,
     svgseven, svgeight, svgnine, svgten, svgeleven,svgone, svgtwo, svgthree, svgfour, svgfive, svgsix,
     svgseven, svgeight, svgnine, svgten, svgeleven,svgone, svgtwo, svgthree, svgfour, svgfive, svgsix,
+    svgseven, svgeight, svgnine,svgeight, svgnine, svgten, svgeleven,svgone, svgtwo, svgthree, svgfour, svgfive, svgsix,
+    svgseven, svgeight, svgnine,svgeight, svgnine, svgten, svgeleven,svgone, svgtwo, svgthree, svgfour, svgfive, svgsix,
     svgseven, svgeight, svgnine,
   ];
 
@@ -45,7 +47,6 @@ function App() {
 
   
 
-
   useEffect(() => {
     setShuffledSvgs(shuffleArray([...svgs]));
     setShuffledSvgs01(shuffleArray([...svgs]));
@@ -53,34 +54,24 @@ function App() {
     setShuffledSvgs03(shuffleArray([...svgs]));
     setShuffledSvgs04(shuffleArray([...svgs]));
 
-
-    
-
   }, []);
 
-  useEffect(() => {
+
+  useLayoutEffect(() => {
+    if (!scrollRef.current) return; 
 
     gsap.killTweensOf(scrollRef.current);
 
-    
     gsap.to(scrollRef.current, {
-      x: direction === 'left' ? '-400%' : '400%',
-      duration: 35, 
-      ease: "linear",
-      repeat: -1, 
-    });
-
-   
-    
-   
-    
-  }, [direction])
+      x: direction === "left" ? "0%" : "-200%",
+      duration: direction === "left" ? 2 : 6,
+      ease: "none",
+      repeat: -1,
+    }); 
+  }, [direction]);
   
 
- 
-
   
-
   const menu = useRef()
   const textone = useRef()
   const scrollRef = useRef();
@@ -132,6 +123,8 @@ function App() {
    
   }
 
+  console.log(direction);
+  
     
  
 
@@ -197,8 +190,8 @@ function App() {
             <h1 className='font-Barlow text-colorone text-4xl l middletwo:text-5xl middlethree:text-6xl'>Futures.</h1>
           </div>
           <div>
-            <div className='h-64 w-64 bg-colorone middleone:h-72 middleone:w-72 middletwo:h-80 middletwo:w-80 middlethree:h-96 middlethree:w-96 flex items-end relative overflow-hidden'  onMouseMove={EnterImage} ref={imagebox}>
-                <div className='flex flex-col gap-3' ref={scrollRef}>
+            <div className='h-64 w-64 bg-colorone middleone:h-72 middleone:w-72 middletwo:h-80 middletwo:w-80 middlethree:h-96 middlethree:w-96 flex items-end relative overflow-hidden '  onMouseMove={EnterImage} ref={imagebox}>
+                <div className='flex flex-col gap-3 transform translate-x-[0%]' ref={scrollRef}>
                   <div className='flex gap-2' >
                   {shuffledSvgs.map((value,index)=>(
                     <img src={value} alt="" srcset="" key={index} className='h-16' />
@@ -230,6 +223,8 @@ function App() {
                   </div>
                
                 </div>
+
+                
                 <img src={profile} className='w-[100%]  absolute' />
             </div>
           </div>
