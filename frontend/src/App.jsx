@@ -64,7 +64,7 @@ function App() {
 
     gsap.to(scrollRef.current, {
       x: direction === "left" ? "0%" : "-200%",
-      duration: direction === "left" ? 2 : 6,
+      duration: direction === "left" ? 3 : 8,
       ease: "none",
       repeat: -1,
     }); 
