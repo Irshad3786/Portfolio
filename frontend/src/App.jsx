@@ -67,6 +67,7 @@ function App() {
       duration: direction === "left" ? 3 : 8,
       ease: "none",
       repeat: -1,
+      pointerEvents: "auto"
     }); 
   }, [direction]);
   
@@ -74,33 +75,79 @@ function App() {
   
   const menu = useRef()
   const textone = useRef()
+  const texttwo = useRef()
+  const textthree = useRef()
+  const textfour = useRef()
+  const textfive = useRef()
   const scrollRef = useRef();
   const imagebox = useRef(null);
 
 
+
+  const tl = gsap.timeline();
+
+  useGSAP(()=>{
+    tl.from(textone.current,{
+      duration:0.8,
+      delay:0.4,
+      opacity:0,
+      stagger: 0.2,
+      ease: "power2.out",
+      pointerEvents: "auto"
+    })
+
+    tl.from(texttwo.current,{
+      duration:1,
+      y:-100,
+      opacity:0,
+      stagger: 0.2,
+      ease: "elastic.out(1,0.3)",
+      pointerEvents: "auto"
+    })
+
+    tl.from(textthree.current,{
+      duration:1,
+      x:-200,
+      opacity:0,
+      stagger: 0.2,
+      ease:  "back.out(1.7)",
+      pointerEvents: "auto"
+    })
+
+    tl.from(textfour.current,{
+      duration:1,
+      x : 200,
+      opacity:0,
+      stagger: 0.2,
+      ease: "back.out(1.7)",
+      pointerEvents: "auto"
+    })
+
+    tl.from(textfive.current,{
+      duration:0.5,
+     
+      opacity:0,
+      stagger: 0.2,
+      ease: "power2.out",
+      pointerEvents: "auto"
+    })
+  })
+
   
 
   useGSAP(()=>{
-    gsap.from(menu.current,{
-      duration:2,
-      delay:0.5,
-      opacity:0,
-      stagger: 0.2,
+    gsap.from(menu.current.children,{
+      duration: 1, 
+      delay: 0.5,
+      opacity: 0,
+      y: 20, 
+      stagger: 0.2, 
       ease: "power2.out",
       pointerEvents: "auto"
     })
   })
 
-  useGSAP(()=>{
-    gsap.from(textone.current,{
-      duration:0.5,
-      delay:0.5,
-      opacity:0,
-      stagger: 0.2,
-      ease: "power2.out",
-      pointerEvents: "auto"
-    })
-  })
+  
 
 
 
@@ -184,10 +231,10 @@ function App() {
           </div>
         </div> 
         <div className='flex flex-col justify-center items-center gap-16 middleone:flex-row middletwo:flex-row  middletwo:justify-between middleone:px-20 middletwo:px-32 middlethree:px-52 middleone:pt-12'>
-          <div ref={textone}>
-            <h1 className='font-Barlow text-colorone flex items-center gap-2 text-4xl middletwo:text-5xl middlethree:text-6xl'>Crafting <h1 className='font-caveat text-colorone text-2xl  middletwo:text-3xl middlethree:text-4xl'>Ideas ,</h1></h1>
-            <h1 className='font-Barlow text-colorone text-4xl  middletwo:text-5xl middlethree:text-6xl'>Designing</h1>
-            <h1 className='font-Barlow text-colorone text-4xl l middletwo:text-5xl middlethree:text-6xl'>Futures.</h1>
+          <div>
+            <h1 className='font-Barlow text-colorone flex items-center gap-2 text-4xl middletwo:text-5xl middlethree:text-6xl'  ref={textone}>Crafting <h1 className='font-caveat text-colorone text-2xl  middletwo:text-3xl middlethree:text-4xl ' ref={texttwo}>Ideas ,</h1></h1>
+            <h1 className='font-Barlow text-colorone text-4xl  middletwo:text-5xl middlethree:text-6xl' ref={textthree}>Designing</h1>
+            <h1 className='font-Barlow text-colorone text-4xl l middletwo:text-5xl middlethree:text-6xl ' ref={textfour}>Futures <span ref={textfive}>.</span></h1>
           </div>
           <div>
             <div className='h-64 w-64 bg-colorone middleone:h-72 middleone:w-72 middletwo:h-80 middletwo:w-80 middlethree:h-96 middlethree:w-96 flex items-end relative overflow-hidden '  onMouseMove={EnterImage} ref={imagebox}>
@@ -227,6 +274,16 @@ function App() {
                 
                 <img src={profile} className='w-[100%]  absolute' />
             </div>
+          </div>
+        </div>
+
+        <div className=' mt-36'>
+          <h1 className='font-caveat text-white text-4xl text-center  middlethree:text-5xl'>Why Me</h1>
+        </div>
+
+        <div>
+          <div> 
+            <p className='font-Barlow text-white text-xl'>I am a versatile full-stack developer with expertise in the MERN stack (MongoDB, Express.js, React, Node.js) and a strong focus on front-end development. I specialize in building highly interactive, fast, and responsive user interfaces using React.js, ensuring seamless user experiences.</p>
           </div>
         </div>
       </div>
