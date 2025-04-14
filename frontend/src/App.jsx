@@ -5,6 +5,8 @@ import { useGSAP } from '@gsap/react';
 import './App.css'
 import { useEffect } from 'react';
 import profile from '../src/assets/profile.png'
+import react from '../src/assets/react.png'
+import nodejs from '../src/assets/nodejs.png'
 import svgone from '../src/assets/shapes/01.svg'
 import svgtwo from '../src/assets/shapes/02.svg'
 import svgthree from '../src/assets/shapes/03.svg'
@@ -16,6 +18,8 @@ import svgeight from '../src/assets/shapes/08.svg'
 import svgnine from '../src/assets/shapes/09.svg'
 import svgten from '../src/assets/shapes/10.svg'
 import svgeleven from '../src/assets/shapes/11.svg'
+import express from '../src/assets/express.png'
+import mongodb from '../src/assets/mongodb.png'
 import { useLayoutEffect } from 'react';
 
 function App() {
@@ -64,7 +68,7 @@ function App() {
 
     gsap.to(scrollRef.current, {
       x: direction === "left" ? "0%" : "-200%",
-      duration: direction === "left" ? 3 : 8,
+      duration: direction === "left" ? 5 : 20,
       ease: "none",
       repeat: -1,
       pointerEvents: "auto"
@@ -153,24 +157,7 @@ function App() {
 
   
 
-  const EnterImage = (x)=>{
-
-    const div = imagebox.current.getBoundingClientRect();
-    const middle = div.left + div.width / 2
-    const mouseplace = x.clientX
-    if(mouseplace < middle){
-      
-      setDirection("left")
-      
-    }else{
-      
-      setDirection("right")
-    }
-
-   
-  }
-
-  console.log(direction);
+  
   
     
  
@@ -237,7 +224,7 @@ function App() {
             <h1 className='font-Barlow text-colorone text-4xl l middletwo:text-5xl middlethree:text-6xl ' ref={textfour}>Futures <span ref={textfive}>.</span></h1>
           </div>
           <div>
-            <div className='h-64 w-64 bg-colorone middleone:h-72 middleone:w-72 middletwo:h-80 middletwo:w-80 middlethree:h-96 middlethree:w-96 flex items-end relative overflow-hidden '  onMouseMove={EnterImage} ref={imagebox}>
+            <div className='h-64 w-64 bg-colorone middleone:h-72 middleone:w-72 middletwo:h-80 middletwo:w-80 middlethree:h-96 middlethree:w-96 flex items-end relative overflow-hidden '   ref={imagebox}>
                 <div className='flex flex-col gap-3 transform translate-x-[0%]' ref={scrollRef}>
                   <div className='flex gap-2' >
                   {shuffledSvgs.map((value,index)=>(
@@ -281,13 +268,52 @@ function App() {
           <h1 className='font-caveat text-white text-4xl text-center  middlethree:text-5xl'>Why Me</h1>
         </div>
 
-        <div>
-          <div> 
-            <p className='font-Barlow text-white text-xl'>I am a versatile full-stack developer with expertise in the MERN stack (MongoDB, Express.js, React, Node.js) and a strong focus on front-end development. I specialize in building highly interactive, fast, and responsive user interfaces using React.js, ensuring seamless user experiences.</p>
+        <div >
+          <div className=' mx-14 mt-4 '> 
+            <p className='font-Barlow text-white text-xl'>I am a versatile full-stack developer with expertise in the <span className='bg-gradient-to-br from-green-400 to-neutral-700 text-transparent bg-clip-text'>M</span>  <span className='bg-gradient-to-br from-yellow-300 to-gray-300 text-transparent bg-clip-text'>E</span> <span className='bg-gradient-to-r from-indigo-400 to-cyan-400 text-transparent bg-clip-text'>R</span> <span className='bg-gradient-to-b from-green-700 to-gray-300 text-transparent bg-clip-text'>N</span> stack (MongoDB, Express.js, React, Node.js) and a strong focus on front-end development. I specialize in building highly interactive, fast, and responsive user interfaces using React.js, ensuring seamless user experiences.</p>
           </div>
+          
+          <div className='mx-14 mt-8 flex flex-wrap justify-center items-center gap-5 pb-5 middlethree:gap-20'>
+  
+
+              <div className='group relative w-28 h-28 flex justify-center items-center'>
+                <div className='absolute -inset-3 rounded-2xl bg-gradient-to-br from-blue-600 to-blue-800 opacity-0 group-hover:opacity-40 blur-2xl transition-all duration-300 z-0 pointer-events-none'></div>
+                <div className='relative w-28 h-28 bg-[#1e1d1c] border-[3px] border-zinc-600 rounded-2xl flex justify-center items-center z-10'>
+                  <div className='absolute w-24 h-24 bg-gradient-to-br from-blue-600 to-blue-800 opacity-30 blur-xl rounded-2xl z-0'></div>
+                  <img src={react} className='h-20 z-10' />
+                </div>
+              </div>
+
+            
+              <div className='group relative w-28 h-28 flex justify-center items-center'>
+                <div className='absolute -inset-3 rounded-2xl bg-gradient-to-br from-green-400 to-green-600 opacity-0 group-hover:opacity-40 blur-2xl transition-all duration-300 z-0 pointer-events-none'></div>
+                <div className='relative w-28 h-28 bg-[#1e1d1c] border-[3px] border-zinc-600 rounded-2xl flex justify-center items-center z-10'>
+                  <div className='absolute w-14 h-14 bg-gradient-to-br from-green-400 to-green-600 opacity-30 blur-xl rounded-full z-0'></div>
+                  <img src={nodejs} className='h-14 z-10' />
+                </div>
+              </div>
+
+              <div className='group relative w-28 h-28 flex justify-center items-center'>
+                <div className='absolute -inset-3 rounded-2xl bg-gradient-to-br from-slate-200 to-slate-500 opacity-0 group-hover:opacity-40 blur-2xl transition-all duration-300 z-0 pointer-events-none'></div>
+                <div className='relative w-28 h-28 bg-[#1e1d1c] border-[3px] border-zinc-600 rounded-2xl flex justify-center items-center z-10'>
+                  <div className='absolute w-14 h-14 bg-gradient-to-br from-slate-200 to-slate-500 opacity-30 blur-xl rounded-full z-0'></div>
+                  <img src={express} className='h-[60px] z-10' />
+                </div>
+              </div>
+
+              <div className='group relative w-28 h-28 flex justify-center items-center'>
+                <div className='absolute -inset-3 rounded-2xl bg-gradient-to-br from-green-400 to-amber-700 opacity-0 group-hover:opacity-40 blur-2xl transition-all duration-300 z-0 pointer-events-none'></div>
+                <div className='relative w-28 h-28 bg-[#1e1d1c] border-[3px] border-zinc-600 rounded-2xl flex justify-center items-center z-10'>
+                  <div className='absolute w-14 h-14 bg-gradient-to-br from-green-400 to-amber-700 opacity-30 blur-xl rounded-full z-0'></div>
+                  <img src={mongodb} className='h-[60px] z-10' />
+                </div>
+              </div>
+
+          </div>
+
         </div>
       </div>
-    </>
+    </> 
   )
 }
 
