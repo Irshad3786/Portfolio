@@ -20,6 +20,19 @@ import svgten from '../src/assets/shapes/10.svg'
 import svgeleven from '../src/assets/shapes/11.svg'
 import express from '../src/assets/express.png'
 import mongodb from '../src/assets/mongodb.png'
+import python from '../src/assets/python.png'
+import java from '../src/assets/java.png'
+import js from '../src/assets/js.png'
+import github from '../src/assets/github.png'
+import aws from '../src/assets/aws.png'
+import ubuntu from '../src/assets/ubuntu.png'
+import nginx from '../src/assets/nginx.png'
+import figma from '../src/assets/figma.png'
+import ps from '../src/assets/ps.png'
+import pr from '../src/assets/pr.png'
+
+
+
 import { useLayoutEffect } from 'react';
 
 function App() {
@@ -312,6 +325,137 @@ function App() {
           </div>
 
         </div>
+        
+
+        <div >
+          <div className=' mx-14 mt-4 '> 
+            <p className='font-Barlow text-white text-xl'>I have a solid understanding of programming concepts in <span className='bg-gradient-to-r from-blue-400 to-yellow-400 text-transparent bg-clip-text'>Python</span>, <span className='bg-gradient-to-r from-orange-500 to-blue-400 text-transparent bg-clip-text'>Java</span>  and <span className='bg-gradient-to-r from-yellow-500 to-amber-900 text-transparent bg-clip-text'>JavaScript</span>. I'm familiar with the fundamentals of each language and enjoy applying my knowledge to solve coding challenges and enhance my skills.</p>
+          </div>
+          
+          <div className='mx-14 mt-8 flex flex-wrap justify-center items-center gap-5 pb-5 middlethree:gap-20'>
+  
+
+              <div className='group relative w-28 h-28 flex justify-center items-center'>
+                <div className='absolute -inset-3 rounded-2xl bg-gradient-to-br from-blue-600 to-yellow-400 opacity-0 group-hover:opacity-40 blur-2xl transition-all duration-300 z-0 pointer-events-none'></div>
+                <div className='relative w-28 h-28 bg-[#1e1d1c] border-[3px] border-zinc-600 rounded-2xl flex justify-center items-center z-10'>
+                  <div className='absolute w-24 h-24 bg-gradient-to-br from-blue-600 to-yellow-400 opacity-30 blur-xl rounded-2xl z-0'></div>
+                  <img src={python} className='h-20 z-10' />
+                </div>
+              </div>
+
+            
+              <div className='group relative w-28 h-28 flex justify-center items-center'>
+                <div className='absolute -inset-3 rounded-2xl bg-gradient-to-br from-yellow-400 to-blue-600 opacity-0 group-hover:opacity-40 blur-2xl transition-all duration-300 z-0 pointer-events-none'></div>
+                <div className='relative w-28 h-28 bg-[#1e1d1c] border-[3px] border-zinc-600 rounded-2xl flex justify-center items-center z-10'>
+                  <div className='absolute w-14 h-14 bg-gradient-to-br from-yellow-400 to-blue-600 opacity-30 blur-xl rounded-full z-0'></div>
+                  <img src={java} className='h-14 z-10' />
+                </div>
+              </div>
+
+              <div className='group relative w-28 h-28 flex justify-center items-center'>
+                <div className='absolute -inset-3 rounded-2xl bg-gradient-to-br from-yellow-200 to-yellow-500 opacity-0 group-hover:opacity-40 blur-2xl transition-all duration-300 z-0 pointer-events-none'></div>
+                <div className='relative w-28 h-28 bg-[#1e1d1c] border-[3px] border-zinc-600 rounded-2xl flex justify-center items-center z-10'>
+                  <div className='absolute w-14 h-14 bg-gradient-to-br from-yellow-200 to-yellow-500 opacity-30 blur-xl rounded-full z-0'></div>
+                  <img src={js} className='h-[60px] z-10' />
+                </div>
+              </div>
+
+              
+
+          </div>
+
+        </div>
+
+
+        <div >
+          <div className=' mx-14 mt-4 '> 
+            <p className='font-Barlow text-white text-xl'>I have a solid understanding of <span className='bg-gradient-to-r from-slate-500 to-white text-transparent bg-clip-text'>GitHub</span>, <span className='bg-gradient-to-r from-green-500 to-green-300 text-transparent bg-clip-text'>Nginx</span>, <span className='bg-gradient-to-r from-amber-500 to-slate-500 text-transparent bg-clip-text'>AWS</span>, and <span className='bg-gradient-to-r from-amber-700 to-white text-transparent bg-clip-text'>Ubuntu</span>. I'm comfortable with using GitHub for version control, including creating repositories, committing changes, and collaborating with others. With Nginx, I can configure it as a web server on Ubuntu systems. I have experience managing AWS EC2 instances and performing routine tasks such as software installation and system updates on Ubuntu. I continuously enhance my skills by exploring these technologies and their applications.</p>
+          </div>
+          
+          <div className='mx-14 mt-8 flex flex-wrap justify-center items-center gap-5 pb-5 middlethree:gap-20'>
+  
+
+              <div className='group relative w-28 h-28 flex justify-center items-center'>
+                <div className='absolute -inset-3 rounded-2xl bg-gradient-to-br from-white to-slate-500 opacity-0 group-hover:opacity-40 blur-2xl transition-all duration-300 z-0 pointer-events-none'></div>
+                <div className='relative w-28 h-28 bg-[#1e1d1c] border-[3px] border-zinc-600 rounded-2xl flex justify-center items-center z-10'>
+                  <div className='absolute w-24 h-24 bg-gradient-to-br from-white to-slate-500 opacity-30 blur-xl rounded-2xl z-0'></div>
+                  <img src={github} className='h-20 z-10' />
+                </div>
+              </div>
+
+            
+              <div className='group relative w-28 h-28 flex justify-center items-center'>
+                <div className='absolute -inset-3 rounded-2xl bg-gradient-to-br from-green-400 to-green-600 opacity-0 group-hover:opacity-40 blur-2xl transition-all duration-300 z-0 pointer-events-none'></div>
+                <div className='relative w-28 h-28 bg-[#1e1d1c] border-[3px] border-zinc-600 rounded-2xl flex justify-center items-center z-10'>
+                  <div className='absolute w-14 h-14 bg-gradient-to-br from-green-400 to-green-600 opacity-30 blur-xl rounded-full z-0'></div>
+                  <img src={nginx} className='h-14 z-10' />
+                </div>
+              </div>
+
+              <div className='group relative w-28 h-28 flex justify-center items-center'>
+                <div className='absolute -inset-3 rounded-2xl bg-gradient-to-br from-amber-200 to-gray-600 opacity-0 group-hover:opacity-40 blur-2xl transition-all duration-300 z-0 pointer-events-none'></div>
+                <div className='relative w-28 h-28 bg-[#1e1d1c] border-[3px] border-zinc-600 rounded-2xl flex justify-center items-center z-10'>
+                  <div className='absolute w-14 h-14 bg-gradient-to-br from-black to-yellow-500 opacity-30 blur-xl rounded-full z-0'></div>
+                  <img src={aws} className='h-[60px] z-10' />
+                </div>
+              </div>
+
+
+              <div className='group relative w-28 h-28 flex justify-center items-center'>
+                <div className='absolute -inset-3 rounded-2xl bg-gradient-to-br from-red-400 to-yellow-500 opacity-0 group-hover:opacity-40 blur-2xl transition-all duration-300 z-0 pointer-events-none'></div>
+                <div className='relative w-28 h-28 bg-[#1e1d1c] border-[3px] border-zinc-600 rounded-2xl flex justify-center items-center z-10'>
+                  <div className='absolute w-14 h-14 bg-gradient-to-br from-red-400 to-yellow-500 opacity-30 blur-xl rounded-full z-0'></div>
+                  <img src={ubuntu} className='h-[60px] z-10' />
+                </div>
+              </div>
+
+              
+
+          </div>
+
+        </div>
+
+
+        <div >
+          <div className=' mx-14 mt-4 '> 
+            <p className='font-Barlow text-white text-xl'>I have a solid understanding of UI/UX design principles and am proficient in using <span className='bg-gradient-to-r from-pink-500 to-cyan-400 text-transparent bg-clip-text'>Figma</span> to create intuitive and visually appealing user interfaces. Additionally, I am skilled in <span className='bg-gradient-to-r from-slate-600 to-sky-500 text-transparent bg-clip-text'>Adobe Photoshop</span> for graphic design tasks and <span className='bg-gradient-to-r from-slate-600 to-indigo-600 text-transparent bg-clip-text'>Adobe Premiere Pro</span> for video editing, enabling me to produce engaging visual content across various media platforms.​
+
+</p>
+          </div>
+          
+          <div className='mx-14 mt-8 flex flex-wrap justify-center items-center gap-5 pb-5 middlethree:gap-20'>
+  
+
+              <div className='group relative w-28 h-28 flex justify-center items-center'>
+                <div className='absolute -inset-3 rounded-2xl bg-gradient-to-br from-pink-500 to-cyan-400 opacity-0 group-hover:opacity-40 blur-2xl transition-all duration-300 z-0 pointer-events-none'></div>
+                <div className='relative w-28 h-28 bg-[#1e1d1c] border-[3px] border-zinc-600 rounded-2xl flex justify-center items-center z-10'>
+                  <div className='absolute w-24 h-24 bg-gradient-to-br from-pink-500 to-cyan-400 opacity-30 blur-xl rounded-2xl z-0'></div>
+                  <img src={figma} className='h-20 z-10' />
+                </div>
+              </div>
+
+            
+              <div className='group relative w-28 h-28 flex justify-center items-center'>
+                <div className='absolute -inset-3 rounded-2xl bg-gradient-to-br from-slate-600 to-sky-500 opacity-0 group-hover:opacity-40 blur-2xl transition-all duration-300 z-0 pointer-events-none'></div>
+                <div className='relative w-28 h-28 bg-[#1e1d1c] border-[3px] border-zinc-600 rounded-2xl flex justify-center items-center z-10'>
+                  <div className='absolute w-14 h-14 bg-gradient-to-br from-slate-600 to-sky-500 opacity-30 blur-xl rounded-full z-0'></div>
+                  <img src={ps} className='h-14 z-10' />
+                </div>
+              </div>
+
+              <div className='group relative w-28 h-28 flex justify-center items-center'>
+                <div className='absolute -inset-3 rounded-2xl bg-gradient-to-br from-slate-500 to-indigo-600 opacity-0 group-hover:opacity-40 blur-2xl transition-all duration-300 z-0 pointer-events-none'></div>
+                <div className='relative w-28 h-28 bg-[#1e1d1c] border-[3px] border-zinc-600 rounded-2xl flex justify-center items-center z-10'>
+                  <div className='absolute w-14 h-14 bg-gradient-to-br from-slate-500 to-indigo-600 opacity-30 blur-xl rounded-full z-0'></div>
+                  <img src={pr} className='h-[60px] z-10' />
+                </div>
+              </div>
+              
+
+          </div>
+
+        </div>
+        
       </div>
     </> 
   )
