@@ -29,6 +29,7 @@ import ubuntu from '../src/assets/ubuntu.png'
 import nginx from '../src/assets/nginx.png'
 import figma from '../src/assets/figma.png'
 import ps from '../src/assets/ps.png'
+import nutricare from '../src/assets/nutricare.png'
 import pr from '../src/assets/pr.png'
 
 
@@ -277,8 +278,8 @@ function App() {
           </div>
         </div>
 
-        <div className=' mt-36'>
-          <h1 className='font-caveat text-white text-4xl text-center  middlethree:text-5xl'>Why Me</h1>
+        <div className=' mt-36 mb-20'>
+          <h1 className='font-Playwrite text-white text-2xl text-center  middlethree:text-3xl'>Why Me</h1>
         </div>
 
         <div >
@@ -420,7 +421,7 @@ function App() {
           <div className=' mx-14 mt-4 '> 
             <p className='font-Barlow text-white text-xl'>I have a solid understanding of UI/UX design principles and am proficient in using <span className='bg-gradient-to-r from-pink-500 to-cyan-400 text-transparent bg-clip-text'>Figma</span> to create intuitive and visually appealing user interfaces. Additionally, I am skilled in <span className='bg-gradient-to-r from-slate-600 to-sky-500 text-transparent bg-clip-text'>Adobe Photoshop</span> for graphic design tasks and <span className='bg-gradient-to-r from-slate-600 to-indigo-600 text-transparent bg-clip-text'>Adobe Premiere Pro</span> for video editing, enabling me to produce engaging visual content across various media platforms.​
 
-</p>
+          </p>
           </div>
           
           <div className='mx-14 mt-8 flex flex-wrap justify-center items-center gap-5 pb-5 middlethree:gap-20'>
@@ -454,6 +455,20 @@ function App() {
 
           </div>
 
+        </div>
+
+        <div className=' mt-36 mb-20'>
+          <h1 className='font-Playwrite text-white text-2xl text-center  middlethree:text-3xl'>Projects</h1>
+        </div>
+
+        <div className=' mx-14 mt-4 '>
+          
+          <div>
+              <div className='w-[100%] flex justify-center items-center border-white '>
+                <img src={nutricare} alt=""  className='w-[100%] middleone:w-[90%] middletwo:w-[80%] middlethree:w-[70%] border-dotted'/>
+              </div>
+            <p className='font-Barlow text-white text-lg mt-7 middleone:text-xl '>The <span className='text-green-300'>Hospital Food Management System</span> is a full-stack web application built to improve the food distribution process in hospitals. It helps manage patient dietary requirements efficiently and supports the kitchen staff with real-time meal tracking and inventory management.</p>
+          </div>
         </div>
         
       </div>

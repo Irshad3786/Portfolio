@@ -31,6 +31,14 @@
     font-style: normal;
 }
 
+
+@font-face {
+    font-family: "Playwrite US Trad";
+    src: url("../src/assets/PlaywriteUSTrad-Regular.ttf") format("truetype");
+    font-weight: bold;
+    font-style: normal;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

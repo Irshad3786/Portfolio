@@ -9,7 +9,8 @@ export default {
       fontFamily: {
         rocko: ["Rocko", "sans-serif"],
         Barlow:["Barlow Semi Condensed", "sans-serif"],
-        caveat:["Caveat", "cursive"]
+        caveat:["Caveat", "cursive"],
+        Playwrite:[ "Playwrite US Trad", "cursive"]
       },
       colors: {
         colorone: "#E9FF09",
