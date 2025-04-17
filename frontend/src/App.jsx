@@ -464,8 +464,8 @@ function App() {
         <div className=' mx-14 mt-4 '>
           
           <div>
-              <div className='w-[100%] flex justify-center items-center border-white '>
-                <img src={nutricare} alt=""  className='w-[100%] middleone:w-[90%] middletwo:w-[80%] middlethree:w-[70%] border-dotted'/>
+              <div className='w-[100%] flex justify-center items-center '>
+                <img src={nutricare} alt=""  className='w-full middleone:w-[90%] middleone:rounded-2xl middletwo:rounded-3xl middletwo:w-[80%] middlethree:w-[70%] rounded-xl cursor-pointer bg-green-400 shadow-[0_4px_20px_0_rgba(74,222,128,0.7)] transition-shadow duration-800'/>
               </div>
             <p className='font-Barlow text-white text-lg mt-7 middleone:text-xl '>The <span className='text-green-300'>Hospital Food Management System</span> is a full-stack web application built to improve the food distribution process in hospitals. It helps manage patient dietary requirements efficiently and supports the kitchen staff with real-time meal tracking and inventory management.</p>
           </div>
