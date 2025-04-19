@@ -39,6 +39,10 @@
     font-style: normal;
 }
 
+.custom-list li::marker {
+    color: #4ade80;
+  }
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

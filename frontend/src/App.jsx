@@ -178,7 +178,7 @@ function App() {
 
   return (
     <>
-      <div className='w-full min-h-screen bg-black'>
+      <div className='w-full min-h-screen bg-black '>
         <div className='flex  px-3 middletwo:px-10  justify-between'>
           <div className='p-4 flex justify-center  items-center h-28 px-3 middleone:hidden'>
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><g fill="none"><path d="m12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035q-.016-.005-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093q.019.005.029-.008l.004-.014l-.034-.614q-.005-.018-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z"/><path fill="#fff" d="M20 17.5a1.5 1.5 0 0 1 .144 2.993L20 20.5H4a1.5 1.5 0 0 1-.144-2.993L4 17.5zm0-7a1.5 1.5 0 0 1 0 3H4a1.5 1.5 0 0 1 0-3zm0-7a1.5 1.5 0 0 1 0 3H4a1.5 1.5 0 1 1 0-3z"/></g></svg>
@@ -463,11 +463,84 @@ function App() {
 
         <div className=' mx-14 mt-4 '>
           
-          <div>
+          <div >
               <div className='w-[100%] flex justify-center items-center '>
+                <a href="https://hospital-food-delivery-omega.vercel.app" target="_blank" rel="noopener noreferrer " className='flex justify-center items-center'>
                 <img src={nutricare} alt=""  className='w-full middleone:w-[90%] middleone:rounded-2xl middletwo:rounded-3xl middletwo:w-[80%] middlethree:w-[70%] rounded-xl cursor-pointer bg-green-400 shadow-[0_4px_20px_0_rgba(74,222,128,0.7)] transition-shadow duration-800'/>
+                </a>
               </div>
-            <p className='font-Barlow text-white text-lg mt-7 middleone:text-xl '>The <span className='text-green-300'>Hospital Food Management System</span> is a full-stack web application built to improve the food distribution process in hospitals. It helps manage patient dietary requirements efficiently and supports the kitchen staff with real-time meal tracking and inventory management.</p>
+              
+              <p className='font-Barlow text-white text-lg mt-7 middleone:text-xl '><span className='text-green-300 flex justify-center items-center gap-2 pb-2'>Hospital Food Management System <a href="https://github.com/Irshad3786/HospitalFoodDelivery" target="_blank" rel="noopener noreferrer "><svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24"><path fill="#fff" d="M12 1C5.923 1 1 5.923 1 12c0 4.868 3.149 8.979 7.521 10.436c.55.096.756-.233.756-.522c0-.262-.013-1.128-.013-2.049c-2.764.509-3.479-.674-3.699-1.292c-.124-.317-.66-1.293-1.128-1.554c-.385-.206-.935-.715-.013-.729c.866-.014 1.485.797 1.691 1.128c.99 1.663 2.571 1.196 3.204.907c.096-.715.385-1.196.701-1.471c-2.447-.275-5.005-1.224-5.005-5.431c0-1.197.426-2.187 1.128-2.957c-.11-.275-.495-1.402.11-2.915c0 0 .92-.288 3.024 1.128c.88-.248 1.816-.372 2.75-.372c.936 0 1.87.124 2.75.372c2.104-1.43 3.025-1.128 3.025-1.128c.605 1.513.22 2.64.11 2.915c.702.77 1.128 1.747 1.128 2.957c0 4.22-2.571 5.156-5.019 5.43c.399.345.743 1.005.743 2.036c0 1.471-.014 2.654-.014 3.025c0 .288.206.632.756.522A11.02 11.02 0 0 0 23 12c0-6.077-4.922-11-11-11"/></svg></a></span> The Hospital Food Management System is a full-stack web application built to improve the food distribution process in hospitals. It helps manage patient dietary requirements efficiently and supports the kitchen staff with real-time meal tracking and inventory management.</p>
+              <ul className='text-white font-Barlow list-disc pl-6 mt-2 custom-list'>
+                  <li>Patient meal scheduling based on doctor's dietary advice</li>
+                  <li>Custom meal plans for various dietary restrictions</li>
+                  <li>Admin dashboard for monitoring meal plans and kitchen inventory</li>
+                  <li>Secure login system using JWT authentication</li>
+                  <li>Fully responsive design for smooth usage on all devices</li>
+                  <li>Instant communication between admin, pantry, and delivery staff to reflect status changes</li>
+                  <li>Separate dashboards for Admin, Pantry Staff, and Delivery Personnel</li>
+                  <li>Separate login for pantry staff to view, prepare, and manage orders</li>
+                  <li>Dedicated login for delivery staff to view meal orders, mark deliveries, and update status in real-time</li>
+              </ul>
+              <div className='font-Barlow mt-5 text-white'>
+                <h1 className='text-[#4ade80]  text-2xl mb-4'>Tech Stack</h1>
+                <div className='mx-14 mt-8 flex flex-wrap items-center gap-10 pb-5 middlethree:gap-20 '>
+                  <div>
+                    <h3 className='text-[#4ade80] text-xl'>Frontend</h3>
+                    <ul className='list-disc custom-list'>
+                      <li>React.js</li>
+                      <li>Tailwind</li>
+                    </ul>
+                  </div>
+
+                  <div>
+                    <h3 className='text-[#4ade80] text-xl'>Backend</h3>
+                    <ul className='list-disc custom-list'>
+                      <li>Node.js</li>
+                      <li>Express.js</li>
+                    </ul>
+                  </div>
+
+                  <div>
+                    <h3 className='text-[#4ade80] text-xl'>Database</h3>
+                    <ul className='list-disc custom-list'>
+                      <li>MongoDB</li>
+                    </ul>
+                  </div>
+
+                  <div>
+                    <h3 className='text-[#4ade80] text-xl'>Authentication</h3>
+                    <ul className='list-disc custom-list'>
+                      <li>JWT - JSON Web Tokens </li>
+                    </ul>
+                  </div>
+                  
+                </div>
+              </div>
+
+
+
+              <div className='font-Barlow mt-5 text-white'>
+                <h1 className='text-[#4ade80] text-2xl mb-4'>Deployment </h1>
+                <div className='mx-14 mt-8 flex flex-wrap  items-center gap-10 pb-5 middlethree:gap-20 '>
+                  <div>
+                    <h3 className='text-[#4ade80] text-xl'>Frontend Deployment</h3>
+                    <ul className='list-disc custom-list'>
+                      <li>Vercel</li>
+                    </ul>
+                  </div>
+
+                  <div>
+                    <h3 className='text-[#4ade80] text-xl'>Backend Deployment</h3>
+                    <ul className='list-disc custom-list'>
+                      <li>AWS EC2 - Elastic Compute Cloud</li>
+                      
+                    </ul>
+                  </div>
+
+                 
+                </div>
+              </div>
           </div>
         </div>
         
