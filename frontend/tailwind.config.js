@@ -21,6 +21,8 @@ export default {
         "middletwo": "720px", 
         "middlethree": "950px", 
       },
+
+      
     },
   },
   plugins: [],

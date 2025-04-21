@@ -43,6 +43,10 @@
     color: #4ade80;
   }
 
+.custom-list-2 li::marker {
+    color: #d24ade;
+  }
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
