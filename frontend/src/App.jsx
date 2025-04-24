@@ -32,6 +32,8 @@ import ps from '../src/assets/ps.png'
 import nutricare from '../src/assets/nutricare.png'
 import project2 from '../src/assets/project2.png'
 import pr from '../src/assets/pr.png'
+import education from '../src/assets/education.svg'
+import grid from '../src/assets/grid.svg'
 
 
 
@@ -282,6 +284,25 @@ function App() {
         <div className=' mt-36 mb-20'>
           <h1 className='font-Playwrite text-white text-2xl text-center  middlethree:text-3xl'>Why Me</h1>
         </div>
+
+        <div className='mx-14 mt-4 text-white'>
+          <p>
+          Hi, I'm <span className='text-colorone'>Mohammad Irshad,</span> a passionate tech enthusiast from  <span className='text-colorone'>Chirala, Andhra Pradesh, India.</span> I completed my Bachelor's degree in <span className='text-colorone'>Computer Science and Engineering</span> in 2023.
+
+          I specialize in full stack web development, combining strong skills in both frontend and backend technologies. I enjoy building complete web applications — from crafting responsive user interfaces to developing robust server-side logic.
+
+          My technical expertise includes programming in Python and Java, and I'm also diving into cloud technologies like AWS - Amazon Web Services to better understand modern web deployment and scalability.
+
+          In addition to development, I have a strong interest in UI/UX design, video editing, and photo editing, which lets me blend creativity with code. I’m always driven by a passion to learn new technologies and build meaningful projects that make a difference.
+
+
+          </p>
+        </div>
+
+        <div>
+          <img src={education} alt="" />
+        </div>
+
         
       <div className='relative z-20'>
         <div >
@@ -666,9 +687,9 @@ function App() {
 
           </div>
 
-          <div className='flex flex-col justify-center items-center gap-5 h-full w-full pb-7 middleone:flex-col middleone:gap-40 middletwo:flex-col middlethree:flex-row middletwo:gap-48  middlethree:justify-around '>
+          <div className='flex flex-col justify-center items-center gap-5 h-full w-full pb-7 middleone:flex-col middleone:gap-40 middletwo:flex-col middlethree:flex-row middletwo:gap-48  middlethree:justify-around relative'>
             <div className='flex flex-col gap-3 text-white font-Barlow px-4'>
-                  <div className='flex gap-2'>
+                  <div className='flex gap-2 '>
                       <svg xmlns="http://www.w3.org/2000/svg" width="25px" height="25px" viewBox="0 0 24 24" fill="none" stroke="#E9FF09">
 
                       <g id="SVGRepo_bgCarrier" stroke-width="0"/>
@@ -748,10 +769,11 @@ function App() {
                     </a>
                   </div>
 
-
-
             </div>
 
+            <div className='absolute top-2 left-7 w-1/2 h-full overflow-hidden'>
+              <img src={grid} className='opacity-10 w-full h-full object-cover' />
+            </div>
             <div className='w-[280px] h-[450px] bg-colorone  shadow-[0_4px_20px_0_rgba(233,255,9,0.7)] transition-shadow duration-800 rounded-2xl middletwo:w-[400px]  middletwo:h-[500px] middlethree:w-[550px] middlethree:h-[600px] '>
                   <div className='font-Barlow font-semibold flex justify-center items-center mt-9'>
                     <h1 className='text-4xl middlethree:text-5xl'>Let's Talk</h1>
@@ -802,8 +824,11 @@ function App() {
           </div>
 
         </div>
+        
+        
 
-
+                  
+                  
       </div>
     </> 
   )
