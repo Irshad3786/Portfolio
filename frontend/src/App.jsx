@@ -34,6 +34,7 @@ import project2 from '../src/assets/project2.png'
 import pr from '../src/assets/pr.png'
 import education from '../src/assets/education.svg'
 import grid from '../src/assets/grid.svg'
+import emailjs from '@emailjs/browser'
 
 
 
@@ -41,6 +42,11 @@ import { useLayoutEffect } from 'react';
 
 function App() {
  
+  const [Name , setName] = useState('')
+  const [Email , setEmail] = useState('')
+  const [Phone , setPhone] = useState('')
+  const [Message , setMessage] = useState('')
+
 
   const [shuffledSvgs, setShuffledSvgs] = useState([]);
   const [shuffledSvgs01, setShuffledSvgs01] = useState([]);
@@ -65,7 +71,36 @@ function App() {
   };
 
   
+ const formSubmit = (e)=>{
+  e.preventDefault()
+  console.log(Name , Email , Phone , Message);
+  const serviceId = 'service_vhbwi3l'
+  const templateId = 'template_04gh6uh'
+  const publicKey = 'BcpyLOLTPmI7Mgzb-'
 
+  const templateParams = {
+    from_name : Name,
+    from_email : Email,
+    from_message : Message,
+    from_phone : Phone
+  }
+
+  emailjs.send(serviceId, templateId, templateParams, publicKey)
+  .then((res)=>{
+    console.log("email Send Successfully" , res);
+    setEmail('')
+    setName('')
+    setPhone('')
+    setMessage('')
+  })
+  .catch((err)=>{
+    console.log("error at emial" , err);
+    
+  })
+
+
+  
+ }
   
 
   useEffect(() => {
@@ -588,7 +623,7 @@ function App() {
             <div >
               <div className='w-[100%] flex justify-center items-center '>
                 <a href="https://healchat.vercel.app" target="_blank" rel="noopener noreferrer " className='flex justify-center items-center'>
-                <img src={project2} alt=""  className='w-full middleone:w-[90%] middleone:rounded-2xl middletwo:rounded-3xl middletwo:w-[80%] middlethree:w-[70%] rounded-xl cursor-pointer bg-fuchsia-600 shadow-[0_4px_20px_0_rgba(232,121,249,0.7)] transition-shadow duration-800'/>
+                <img src={project2} alt=""   className='w-full middleone:w-[90%] middleone:rounded-2xl middletwo:rounded-3xl middletwo:w-[80%] middlethree:w-[70%] rounded-xl cursor-pointer bg-fuchsia-600 shadow-[0_4px_20px_0_rgba(232,121,249,0.7)] transition-shadow duration-800'/>
                 </a>
               </div>
               
@@ -689,7 +724,7 @@ function App() {
 
           <div className='flex flex-col justify-center items-center gap-5 h-full w-full pb-7 middleone:flex-col middleone:gap-40 middletwo:flex-col middlethree:flex-row middletwo:gap-48  middlethree:justify-around relative'>
             <div className='flex flex-col gap-3 text-white font-Barlow px-4'>
-                  <div className='flex gap-2 '>
+                  <div className='flex gap-2 z-10'>
                       <svg xmlns="http://www.w3.org/2000/svg" width="25px" height="25px" viewBox="0 0 24 24" fill="none" stroke="#E9FF09">
 
                       <g id="SVGRepo_bgCarrier" stroke-width="0"/>
@@ -703,7 +738,7 @@ function App() {
                       <p>irshad9182278505@gmail.com</p>
                   </div>
 
-                  <div className='flex  gap-2'>
+                  <div className='flex  gap-2 z-10'>
                     <svg xmlns="http://www.w3.org/2000/svg" width="25px" height="25px" viewBox="0 0 24 24" fill="none">
 
                     <g id="SVGRepo_bgCarrier" stroke-width="0"/>
@@ -716,7 +751,7 @@ function App() {
                     <p>+91 9182278505</p>
                   </div>
 
-                  <div >
+                  <div className='z-10'>
                     <a href="https://www.linkedin.com/in/irshad-dev" target="_blank" rel="noopener noreferrer " className='flex gap-2'>
                     <svg xmlns="http://www.w3.org/2000/svg" width="25px" height="25px" viewBox="0 0 24 24" fill="none">
 
@@ -733,7 +768,7 @@ function App() {
                   </div>
 
 
-                  <div >
+                  <div className='z-10'>
                       <a href="https://www.instagram.com/irshad_m.d/?igsh=Z2w2NDQ1NHBvZ2lh#" target="_blank" rel="noopener noreferrer " className='flex gap-2'>
                       <svg xmlns="http://www.w3.org/2000/svg" width="25px" height="25px" viewBox="0 0 24 24" fill="none">
 
@@ -749,7 +784,7 @@ function App() {
                       </a>
                   </div>
 
-                  <div >
+                  <div className='z-10'>
                     <a href="https://x.com/i/flow/login?redirect_after_login=%2FMd_Irshad_3786" target="_blank" rel="noopener noreferrer " className='flex gap-2'>
                   <svg xmlns="http://www.w3.org/2000/svg" width="25px" height="25px" viewBox="0 0 16 16" fill="none">
 
@@ -771,8 +806,8 @@ function App() {
 
             </div>
 
-            <div className='absolute top-2 left-7 w-1/2 h-full overflow-hidden'>
-              <img src={grid} className='opacity-10 w-full h-full object-cover' />
+            <div className='absolute top-2 left-7 w-1/2 h-full overflow-hidden z-0'>
+              <img src={grid} className='opacity-10 w-full h-full object-cover' draggable="false" />
             </div>
             <div className='w-[280px] h-[450px] bg-colorone  shadow-[0_4px_20px_0_rgba(233,255,9,0.7)] transition-shadow duration-800 rounded-2xl middletwo:w-[400px]  middletwo:h-[500px] middlethree:w-[550px] middlethree:h-[600px] '>
                   <div className='font-Barlow font-semibold flex justify-center items-center mt-9'>
@@ -782,10 +817,13 @@ function App() {
                 
                 <div className='flex justify-center items-center gap-2'>
                 <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 48 48"><g fill="none" stroke="#040404" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"><circle cx="24" cy="11" r="7"/><path d="M4 41c0-8.837 8.059-16 18-16m9 17l10-10l-4-4l-10 10v4z"/></g></svg>
+                
                 <input
                   type="text"
                   id="name"
                   placeholder="Your Name"
+                  value={Name}
+                  onChange={(e)=>{setName(e.target.value)}}
                   className="p-2 rounded-xl placeholder:font-rocko placeholder:text-sm border border-gray-400 middlethree:w-[350px]"
                 />
 
@@ -796,6 +834,8 @@ function App() {
                 <input
                   type="email"
                   id="email"
+                  value={Email}
+                  onChange={(e)=>{setEmail(e.target.value)}}
                   placeholder="E-mail"
                   className="p-2 rounded-xl placeholder:font-rocko placeholder:text-sm border border-gray-400 middlethree:w-[350px]"
                 />
@@ -806,16 +846,20 @@ function App() {
                 <input
                   type="text"
                   id="phone"
+                  value={Phone}
+                  onChange={(e)=>{setPhone(e.target.value)}}
                   placeholder="Phone"
                   className="p-2 rounded-xl placeholder:font-rocko placeholder:text-sm border border-gray-400 middlethree:w-[350px]"
                 />
                 </div>
                 <textarea
                   id="message"
+                  value={Message}
+                  onChange={(e)=>{setMessage(e.target.value)}}
                   placeholder="Message"
                   className="p-2 h-32 w-64 rounded-xl placeholder:font-rocko placeholder:text-sm border border-gray-400 resize-none middlethree:w-[450px] middlethree:h-[250px]"
                 />
-                <button className='bg-black rounded-lg text-white font-rocko px-4 py-1 flex justify-center items-center gap-3'> Submit <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 15 16"><path fill="#fff" d="M12.49 7.14L3.44 2.27c-.76-.41-1.64.3-1.4 1.13l1.24 4.34q.075.27 0 .54l-1.24 4.34c-.24.83.64 1.54 1.4 1.13l9.05-4.87a.98.98 0 0 0 0-1.72Z"/></svg></button>
+                <button className='bg-black rounded-lg text-white font-rocko px-4 py-1 flex justify-center items-center gap-3' onClick={formSubmit}> Submit <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 15 16"><path fill="#fff" d="M12.49 7.14L3.44 2.27c-.76-.41-1.64.3-1.4 1.13l1.24 4.34q.075.27 0 .54l-1.24 4.34c-.24.83.64 1.54 1.4 1.13l9.05-4.87a.98.98 0 0 0 0-1.72Z"/></svg></button>
               </div>
 
 
