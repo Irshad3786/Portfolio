@@ -251,16 +251,20 @@ function App() {
 
 
           <div className='pt-8 sm:justify-start ' >
+          <a
+              href="/resume.pdf"
+              download
+              className='bg-colorone flex space-x-2 w-fit p-2 px-4 rounded-3xl absolute'
+            >
               <div>
-                <div className='bg-colorone flex space-x-2 w-fit p-2 px-4 rounded-3xl absolute '>
-                  
-                  <div>
-                   
-                    <h1 className='font-rocko flex justify-center items-center gap-2 text-xs middletwo:text-lg'>Resume<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="#000" d="M12 15.575q-.2 0-.375-.062T11.3 15.3l-3.6-3.6q-.3-.3-.288-.7t.288-.7q.3-.3.713-.312t.712.287L11 12.15V5q0-.425.288-.712T12 4t.713.288T13 5v7.15l1.875-1.875q.3-.3.713-.288t.712.313q.275.3.288.7t-.288.7l-3.6 3.6q-.15.15-.325.213t-.375.062M6 20q-.825 0-1.412-.587T4 18v-2q0-.425.288-.712T5 15t.713.288T6 16v2h12v-2q0-.425.288-.712T19 15t.713.288T20 16v2q0 .825-.587 1.413T18 20z" stroke-width="0.5" stroke="#000"/></svg></h1>
-                  </div>
-                </div>
+                <h1 className='font-rocko flex justify-center items-center gap-2 text-xs middletwo:text-lg'>
+                  Resume
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <path fill="#000" d="M12 15.575q-.2 0-.375-.062T11.3 15.3l-3.6-3.6q-.3-.3-.288-.7t.288-.7q.3-.3.713-.312t.712.287L11 12.15V5q0-.425.288-.712T12 4t.713.288T13 5v7.15l1.875-1.875q.3-.3.713-.288t.712.313q.275.3.288.7t-.288.7l-3.6 3.6q-.15.15-.325.213t-.375.062M6 20q-.825 0-1.412-.587T4 18v-2q0-.425.288-.712T5 15t.713.288T6 16v2h12v-2q0-.425.288-.712T19 15t.713.288T20 16v2q0 .825-.587 1.413T18 20z" stroke-width="0.5" stroke="#000"/>
+                  </svg>
+                </h1>
               </div>
-
+            </a>
               <div className='p-3'>
                 <div className='bg-colortwo flex space-x-2  p-2 px-4 h-9 w-[100px] middletwo:h-10 middletwo:w-[125px] rounded-3xl'>
                 
@@ -334,7 +338,7 @@ function App() {
           </p>
         </div>
 
-        <div>
+        <div className='overflow-x-hidden'>
           <img src={education} alt="" />
         </div>
 
@@ -723,7 +727,7 @@ function App() {
           </div>
 
           <div className='flex flex-col justify-center items-center gap-5 h-full w-full pb-7 middleone:flex-col middleone:gap-40 middletwo:flex-col middlethree:flex-row middletwo:gap-48  middlethree:justify-around relative'>
-            <div className='flex flex-col gap-3 text-white font-Barlow px-4'>
+            <div className='flex flex-col gap-3 text-white font-Barlow px-4 '>
                   <div className='flex gap-2 z-10'>
                       <svg xmlns="http://www.w3.org/2000/svg" width="25px" height="25px" viewBox="0 0 24 24" fill="none" stroke="#E9FF09">
 
@@ -806,7 +810,7 @@ function App() {
 
             </div>
 
-            <div className='absolute top-2 left-7 w-1/2 h-full overflow-hidden z-0'>
+            <div className='absolute top-2 left-7 w-1/2 h-full overflow-hidden z-0 overflow-x-hidden'>
               <img src={grid} className='opacity-10 w-full h-full object-cover' draggable="false" />
             </div>
             <div className='w-[280px] h-[450px] bg-colorone  shadow-[0_4px_20px_0_rgba(233,255,9,0.7)] transition-shadow duration-800 rounded-2xl middletwo:w-[400px]  middletwo:h-[500px] middlethree:w-[550px] middlethree:h-[600px] '>
