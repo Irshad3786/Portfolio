@@ -48,6 +48,21 @@ function App() {
   const [Message , setMessage] = useState('')
 
 
+
+  const home = useRef()
+  const whyme = useRef()
+  const projects = useRef()
+  const contact = useRef()
+
+
+  const scrollhandler=(ele)=>{
+    if (ele && ele.current) {
+      window.scrollTo({ top: ele.current.offsetTop, behavior: "smooth" });
+    }
+  }
+
+
+
   const [shuffledSvgs, setShuffledSvgs] = useState([]);
   const [shuffledSvgs01, setShuffledSvgs01] = useState([]);
   const [shuffledSvgs02, setShuffledSvgs02] = useState([]);
@@ -243,14 +258,14 @@ function App() {
           </div>
 
           <div className='hidden middleone:flex text-white justify-between gap-4 font-rocko items-center p-3 middletwo:text-xl middletwo:gap-7' ref={menu}>
-            <h1 >Home</h1>
-            <h1>Why Me</h1>
-            <h1>Projects</h1>
-            <h1>Contact</h1>
+            <h1 onClick={() => scrollhandler(home)} className='cursor-pointer'>Home</h1>
+            <h1 onClick={() => scrollhandler(whyme)} className='cursor-pointer'>Why Me</h1>
+            <h1 onClick={() => scrollhandler(projects)} className='cursor-pointer'>Projects</h1>
+            <h1 onClick={() => scrollhandler(contact)} className='cursor-pointer' >Contact</h1>
           </div>
 
 
-          <div className='pt-8 sm:justify-start ' >
+          <div className='pt-8 sm:justify-start ' ref={home} >
           <a
               href="/resume.pdf"
               download
@@ -321,7 +336,7 @@ function App() {
         </div>
 
         <div className=' mt-36 mb-20'>
-          <h1 className='font-Playwrite text-white text-2xl text-center  middlethree:text-3xl'>Why Me</h1>
+          <h1 className='font-Playwrite text-white text-2xl text-center  middlethree:text-3xl' ref={whyme}>Why Me</h1>
         </div>
 
         <div className='mx-14 mt-4 text-white'>
@@ -529,10 +544,10 @@ function App() {
 
 
         </div>
-        <div className='relative '>
+        <div className='relative ' ref={projects}>
 
         <div className=' mt-36 mb-20'>
-          <h1 className='font-Playwrite text-white text-2xl text-center  middlethree:text-3xl relative z-10'>Projects</h1>
+          <h1 className='font-Playwrite text-white text-2xl text-center  middlethree:text-3xl relative z-10' >Projects</h1>
         </div>
 
        
@@ -722,7 +737,7 @@ function App() {
         <div>
 
           <div className=' mt-36 mb-40'>
-            <h1 className='font-Playwrite text-white text-2xl text-center  middlethree:text-3xl'>Contact</h1>
+            <h1 className='font-Playwrite text-white text-2xl text-center  middlethree:text-3xl' ref={contact}>Contact</h1>
 
           </div>
 
