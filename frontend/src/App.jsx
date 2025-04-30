@@ -54,6 +54,9 @@ function App() {
   const projects = useRef()
   const contact = useRef()
 
+  const scroll = useRef()
+ 
+
 
   const scrollhandler=(ele)=>{
     if (ele && ele.current) {
@@ -88,6 +91,9 @@ function App() {
   
  const formSubmit = (e)=>{
   e.preventDefault()
+  if(!Email || !Phone || !Name || !Message){
+    alert("Please Enter all Fields")
+  }
   console.log(Name , Email , Phone , Message);
   const serviceId = 'service_vhbwi3l'
   const templateId = 'template_04gh6uh'
@@ -220,20 +226,58 @@ function App() {
 
   
 
-
-
-  
-
-  
-  
+  const scrollingTrigger = ()=>{
+   
     
- 
+    gsap.to(scroll.current, {
+      x: 200,
+      duration: 1,
+      ease: "power2.out",
+    });
+  }
+
+
+  const scrollingTriggerOff = ()=>{
+   
+    
+    gsap.to(scroll.current, {
+      x: 0,
+      duration: 1,
+      ease: "power2.out",
+    });
+  }
+
+
+
+
 
   return (
     <>
-      <div className='w-full min-h-screen bg-black '>
-        <div className='flex  px-3 middletwo:px-10  justify-between'>
-          <div className='p-4 flex justify-center  items-center h-28 px-3 middleone:hidden'>
+      <div className='w-full min-h-screen bg-black relative'>
+          <div className='absolute  bg-white/20 backdrop-blur-md h-[300px] w-[50%] bg-white z-50 rounded-r-xl top-11  middleone:hidden -left-52' ref={scroll} >
+              <div className='flex justify-end p-5'  onClick={scrollingTriggerOff}>
+              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000" height="20px" width="20px" version="1.1" id="Capa_1" viewBox="0 0 460.775 460.775" xml:space="preserve">
+
+                  <g id="SVGRepo_bgCarrier" stroke-width="0"/>
+
+                  <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+
+                  <g id="SVGRepo_iconCarrier"> <path d="M285.08,230.397L456.218,59.27c6.076-6.077,6.076-15.911,0-21.986L423.511,4.565c-2.913-2.911-6.866-4.55-10.992-4.55 c-4.127,0-8.08,1.639-10.993,4.55l-171.138,171.14L59.25,4.565c-2.913-2.911-6.866-4.55-10.993-4.55 c-4.126,0-8.08,1.639-10.992,4.55L4.558,37.284c-6.077,6.075-6.077,15.909,0,21.986l171.138,171.128L4.575,401.505 c-6.074,6.077-6.074,15.911,0,21.986l32.709,32.719c2.911,2.911,6.865,4.55,10.992,4.55c4.127,0,8.08-1.639,10.994-4.55 l171.117-171.12l171.118,171.12c2.913,2.911,6.866,4.55,10.993,4.55c4.128,0,8.081-1.639,10.992-4.55l32.709-32.719 c6.074-6.075,6.074-15.909,0-21.986L285.08,230.397z"/> </g>
+
+              </svg>
+              </div>
+
+              <div className=' flex flex-col text-white justify-between gap-4 font-rocko items-center p-3 '>
+              <h1 onClick={() => scrollhandler(home)} className='cursor-pointer'>Home</h1>
+              <h1 onClick={() => scrollhandler(whyme)} className='cursor-pointer'>Why Me</h1>
+              <h1 onClick={() => scrollhandler(projects)} className='cursor-pointer'>Projects</h1>
+              <h1 onClick={() => scrollhandler(contact)} className='cursor-pointer' >Contact</h1>
+              </div>
+          </div>
+        
+        <div className='flex  px-3 middletwo:px-10  justify-between '>
+          
+          <div className='p-4 flex justify-center  items-center h-28 px-3 middleone:hidden' onClick={scrollingTrigger}>
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><g fill="none"><path d="m12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035q-.016-.005-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093q.019.005.029-.008l.004-.014l-.034-.614q-.005-.018-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z"/><path fill="#fff" d="M20 17.5a1.5 1.5 0 0 1 .144 2.993L20 20.5H4a1.5 1.5 0 0 1-.144-2.993L4 17.5zm0-7a1.5 1.5 0 0 1 0 3H4a1.5 1.5 0 0 1 0-3zm0-7a1.5 1.5 0 0 1 0 3H4a1.5 1.5 0 1 1 0-3z"/></g></svg>
           </div>
           <div className='pt-8 sm:justify-start ' >
