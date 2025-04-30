@@ -230,7 +230,7 @@ function App() {
    
     
     gsap.to(scroll.current, {
-      x: 200,
+      x: 250,
       duration: 1,
       ease: "power2.out",
     });
@@ -254,7 +254,7 @@ function App() {
   return (
     <>
       <div className='w-full min-h-screen bg-black relative'>
-          <div className='absolute  bg-white/20 backdrop-blur-md h-[300px] w-[50%] bg-white z-50 rounded-r-xl top-11  middleone:hidden -left-52' ref={scroll} >
+          <div className='absolute  bg-white/20 backdrop-blur-md h-[300px] w-[50%] bg-white z-50 rounded-r-xl top-11  middleone:hidden -left-64' ref={scroll} >
               <div className='flex justify-end p-5'  onClick={scrollingTriggerOff}>
               <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000" height="20px" width="20px" version="1.1" id="Capa_1" viewBox="0 0 460.775 460.775" xml:space="preserve">
 
