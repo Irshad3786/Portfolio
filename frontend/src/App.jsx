@@ -374,7 +374,7 @@ function App() {
                 </div>
 
                 
-                <img src={profile} className='w-[100%]  absolute' />
+                <img src={profile} className='w-[100%]  absolute ' />
             </div>
           </div>
         </div>
@@ -387,11 +387,11 @@ function App() {
           <p>
           Hi, I'm <span className='text-colorone'>Mohammad Irshad,</span> a passionate tech enthusiast from  <span className='text-colorone'>Chirala, Andhra Pradesh, India.</span> I completed my Bachelor's degree in <span className='text-colorone'>Computer Science and Engineering</span> in 2023.
 
-          I specialize in full stack web development, combining strong skills in both frontend and backend technologies. I enjoy building complete web applications — from crafting responsive user interfaces to developing robust server-side logic.
+          I specialize in <span className='text-colorone'>full stack web development - MERN</span>, combining strong skills in both <span className='text-colorone'>frontend</span> and <span className='text-colorone'>backend</span> technologies. I enjoy building complete web applications — from crafting responsive user interfaces to developing robust server-side logic.
 
-          My technical expertise includes programming in Python and Java, and I'm also diving into cloud technologies like AWS - Amazon Web Services to better understand modern web deployment and scalability.
+          My technical expertise includes programming in <span className='text-colorone'>Python</span> and <span className='text-colorone'>Java</span>, and I'm also diving into cloud technologies like <span className='text-colorone'>AWS - Amazon Web Services</span> to better understand modern web deployment and scalability.
 
-          In addition to development, I have a strong interest in UI/UX design, video editing, and photo editing, which lets me blend creativity with code. I’m always driven by a passion to learn new technologies and build meaningful projects that make a difference.
+          In addition to development, I have a strong interest in <span className='text-colorone'>UI/UX</span> design, <span className='text-colorone'>video editing</span>, and <span className='text-colorone'>photo editing</span>, which lets me blend creativity with code. I’m always driven by a passion to learn new technologies and build meaningful projects that make a difference.
 
 
           </p>
